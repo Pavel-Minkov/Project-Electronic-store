@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ElectronicStore.Web.Areas.Identity.Data;
+using ElectronicStore.Data;
+using ElectronicStore.Data.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -39,7 +40,16 @@ namespace ElectronicStore.Web
                 options.UseSqlServer(
                     this.Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<ElectronicStoreUser>()
+            services.AddDefaultIdentity<ElectronicStoreUser>(opt =>
+                {
+                    opt.Password.RequireDigit = false;
+                    opt.Password.RequireLowercase = false;
+                    opt.Password.RequireNonAlphanumeric = false;
+                    opt.Password.RequireUppercase = false;
+                    opt.Password.RequiredLength = 6;
+                    opt.Password.RequiredUniqueChars = 0;
+                    opt.SignIn.RequireConfirmedEmail = false;
+                })
                 .AddEntityFrameworkStores<ElectronicStoreContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

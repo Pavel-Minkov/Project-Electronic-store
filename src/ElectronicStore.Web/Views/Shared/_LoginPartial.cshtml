@@ -1,7 +1,8 @@
+@using ElectronicStore.Web.Areas.Identity.Data
 @using Microsoft.AspNetCore.Identity
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<ElectronicStoreUser> SignInManager
+@inject UserManager<ElectronicStoreUser> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {

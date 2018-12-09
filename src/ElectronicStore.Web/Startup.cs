@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using ElectronicStore.Data;
 using ElectronicStore.Data.Models;
 using Microsoft.AspNetCore.Builder;
@@ -53,6 +54,8 @@ namespace ElectronicStore.Web
                 .AddEntityFrameworkStores<ElectronicStoreContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

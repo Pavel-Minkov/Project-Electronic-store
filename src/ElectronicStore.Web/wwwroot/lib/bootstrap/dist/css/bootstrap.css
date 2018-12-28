@@ -6567,6 +6567,20 @@ button.close {
 .visible-lg-inline-block {
   display: none !important;
 }
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+.product .img-responsive {
+    margin: 0 auto;
+}
 @media (max-width: 767px) {
   .visible-xs {
     display: block !important;

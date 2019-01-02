@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ElectronicStore.Data;
 using ElectronicStore.Data.Models;
+using ElectronicStore.Data.Models.Products;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +14,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ElectronicStore.Web.Models;
+using ElectronicStore.Web.ViewModels;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -55,7 +57,15 @@ namespace ElectronicStore.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddAutoMapper();
+            services.AddAutoMapper(config =>
+            {
+                config.CreateMap<ProductViewModel, PhotoCamera>();
+                config.CreateMap<ProductViewModel, AirConditioner>();
+                config.CreateMap<ProductViewModel, Fridge>();
+                config.CreateMap<ProductViewModel, Smartphone>();
+                config.CreateMap<ProductViewModel, TV>();
+                config.CreateMap<ProductViewModel, WashingMachine>();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

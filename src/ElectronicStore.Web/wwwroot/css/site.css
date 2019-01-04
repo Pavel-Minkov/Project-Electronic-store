@@ -32,6 +32,19 @@ body {
     margin: 20px;
 }
 
+.p-10 {
+    padding: 10px;
+}
+.w-70 {
+    width: 70px;
+}
+.ml-50 {
+    margin-left: 50px;
+}
+.w-280 {
+    width: 280px;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

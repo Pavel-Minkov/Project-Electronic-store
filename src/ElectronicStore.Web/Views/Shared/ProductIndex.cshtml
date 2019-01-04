@@ -1,0 +1,50 @@
+﻿<div id="contentholder" class="contentholder">
+        <div class="">
+            <section class="">
+                <div class="container">
+                    <section>
+                        <div class="container">
+                            <div class="page-title sh-heading">
+                                <h1>@ViewBag.Title</h1>
+                            </div>
+                            <div class="row">
+                                <main class="col-md-12">
+                                    <div class="row">
+                                    @foreach (var product in ViewBag.products)
+                                    {
+                                        <div class="col-md-4 table-bordered w-280">
+                                            <div>
+                                                <img itemprop="image" src="~/images/PhotoCameras/@product.ImageName">
+                                            </div>                                  
+                                            <div class="product-name">
+                                                <h5><span>@product.Manufacturer @product.ProductModel</span></h5>
+                                            </div>
+                                            <div class="product-price">
+                                                <var class="price">
+                                                    <span class="new">@product.Price BGN</span>
+                                                </var>
+                                            </div>
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-md-6 product-buy p-10">
+                                                        <form action="/cart/add" novalidate="3">
+                                                            <input type="hidden" value="@product.Id" name="product">
+                                                            <button type="submit" class="btn btn-default pull-left" role="button">Buy</button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="col-md-6 p-10">
+                                                        <a href="/@ViewBag.ControllerName/Details?id=@product.Id" class="btn btn-default w-70 ml-50" role="button">Details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                    </div>
+                                </main>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>

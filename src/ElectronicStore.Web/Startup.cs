@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ElectronicStore.Web.Models;
 using ElectronicStore.Web.ViewModels;
+using Microsoft.AspNetCore.Antiforgery.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -55,7 +56,11 @@ namespace ElectronicStore.Web
                 })
                 .AddEntityFrameworkStores<ElectronicStoreContext>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(
+                options =>
+                {
+                    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+                }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddAutoMapper(config =>
             {

@@ -13,7 +13,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ElectronicStore.Web.Models;
 using ElectronicStore.Web.ViewModels;
 using Microsoft.AspNetCore.Antiforgery.Internal;
 using Microsoft.Extensions.Configuration;

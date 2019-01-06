@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using ElectronicStore.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using ElectronicStore.Web.Models;
 
 namespace ElectronicStore.Web.Controllers
 {

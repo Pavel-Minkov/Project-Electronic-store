@@ -18,8 +18,4 @@
     <ProjectReference Include="..\ElectronicStore.Data\ElectronicStore.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\PhotoCamera\" />
-  </ItemGroup>
-
 </Project>
